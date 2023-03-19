@@ -71,12 +71,6 @@
 				267F7C1129C757F50069A2A5 /* CoreData */,
 				267F7C1029C757F30069A2A5 /* Ext */,
 				267F7C0E29C757EA0069A2A5 /* View */,
-				267F7C0129C743780069A2A5 /* ContentView.swift */,
-				267F7C1929C759A60069A2A5 /* MainView.swift */,
-				267F7C1B29C759AF0069A2A5 /* AddView.swift */,
-				267F7C1D29C759BA0069A2A5 /* PlayView.swift */,
-				267F7C1F29C759C40069A2A5 /* CircleTimerView.swift */,
-				267F7C2129C759CD0069A2A5 /* SearchView.swift */,
 				267F7C0329C743790069A2A5 /* Assets.xcassets */,
 				267F7C0529C743790069A2A5 /* Preview Content */,
 			);
@@ -94,6 +88,12 @@
 		267F7C0E29C757EA0069A2A5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				267F7C0129C743780069A2A5 /* ContentView.swift */,
+				267F7C1929C759A60069A2A5 /* MainView.swift */,
+				267F7C1B29C759AF0069A2A5 /* AddView.swift */,
+				267F7C1D29C759BA0069A2A5 /* PlayView.swift */,
+				267F7C1F29C759C40069A2A5 /* CircleTimerView.swift */,
+				267F7C2129C759CD0069A2A5 /* SearchView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
