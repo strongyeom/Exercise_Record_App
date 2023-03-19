@@ -11,6 +11,14 @@
 		267F7C0229C743780069A2A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267F7C0129C743780069A2A5 /* ContentView.swift */; };
 		267F7C0429C743790069A2A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 267F7C0329C743790069A2A5 /* Assets.xcassets */; };
 		267F7C0729C743790069A2A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 267F7C0629C743790069A2A5 /* Preview Assets.xcassets */; };
+		267F7C1429C758390069A2A5 /* Exercise.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 267F7C1229C758390069A2A5 /* Exercise.xcdatamodeld */; };
+		267F7C1629C758AB0069A2A5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267F7C1529C758AB0069A2A5 /* CoreDataManager.swift */; };
+		267F7C1829C7597C0069A2A5 /* Ext+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267F7C1729C7597C0069A2A5 /* Ext+CornerRadius.swift */; };
+		267F7C1A29C759A60069A2A5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267F7C1929C759A60069A2A5 /* MainView.swift */; };
+		267F7C1C29C759AF0069A2A5 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267F7C1B29C759AF0069A2A5 /* AddView.swift */; };
+		267F7C1E29C759BA0069A2A5 /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267F7C1D29C759BA0069A2A5 /* PlayView.swift */; };
+		267F7C2029C759C40069A2A5 /* CircleTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267F7C1F29C759C40069A2A5 /* CircleTimerView.swift */; };
+		267F7C2229C759CD0069A2A5 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267F7C2129C759CD0069A2A5 /* SearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +27,14 @@
 		267F7C0129C743780069A2A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		267F7C0329C743790069A2A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		267F7C0629C743790069A2A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		267F7C1329C758390069A2A5 /* Exercise.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Exercise.xcdatamodel; sourceTree = "<group>"; };
+		267F7C1529C758AB0069A2A5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		267F7C1729C7597C0069A2A5 /* Ext+CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+CornerRadius.swift"; sourceTree = "<group>"; };
+		267F7C1929C759A60069A2A5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		267F7C1B29C759AF0069A2A5 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		267F7C1D29C759BA0069A2A5 /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
+		267F7C1F29C759C40069A2A5 /* CircleTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTimerView.swift; sourceTree = "<group>"; };
+		267F7C2129C759CD0069A2A5 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +68,15 @@
 			isa = PBXGroup;
 			children = (
 				267F7BFF29C743780069A2A5 /* ExerciseRecordAppApp.swift */,
+				267F7C1129C757F50069A2A5 /* CoreData */,
+				267F7C1029C757F30069A2A5 /* Ext */,
+				267F7C0E29C757EA0069A2A5 /* View */,
 				267F7C0129C743780069A2A5 /* ContentView.swift */,
+				267F7C1929C759A60069A2A5 /* MainView.swift */,
+				267F7C1B29C759AF0069A2A5 /* AddView.swift */,
+				267F7C1D29C759BA0069A2A5 /* PlayView.swift */,
+				267F7C1F29C759C40069A2A5 /* CircleTimerView.swift */,
+				267F7C2129C759CD0069A2A5 /* SearchView.swift */,
 				267F7C0329C743790069A2A5 /* Assets.xcassets */,
 				267F7C0529C743790069A2A5 /* Preview Content */,
 			);
@@ -65,6 +89,30 @@
 				267F7C0629C743790069A2A5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		267F7C0E29C757EA0069A2A5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		267F7C1029C757F30069A2A5 /* Ext */ = {
+			isa = PBXGroup;
+			children = (
+				267F7C1729C7597C0069A2A5 /* Ext+CornerRadius.swift */,
+			);
+			path = Ext;
+			sourceTree = "<group>";
+		};
+		267F7C1129C757F50069A2A5 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				267F7C1229C758390069A2A5 /* Exercise.xcdatamodeld */,
+				267F7C1529C758AB0069A2A5 /* CoreDataManager.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +185,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				267F7C2229C759CD0069A2A5 /* SearchView.swift in Sources */,
+				267F7C1C29C759AF0069A2A5 /* AddView.swift in Sources */,
 				267F7C0229C743780069A2A5 /* ContentView.swift in Sources */,
+				267F7C2029C759C40069A2A5 /* CircleTimerView.swift in Sources */,
+				267F7C1E29C759BA0069A2A5 /* PlayView.swift in Sources */,
+				267F7C1A29C759A60069A2A5 /* MainView.swift in Sources */,
+				267F7C1429C758390069A2A5 /* Exercise.xcdatamodeld in Sources */,
+				267F7C1629C758AB0069A2A5 /* CoreDataManager.swift in Sources */,
+				267F7C1829C7597C0069A2A5 /* Ext+CornerRadius.swift in Sources */,
 				267F7C0029C743780069A2A5 /* ExerciseRecordAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +395,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		267F7C1229C758390069A2A5 /* Exercise.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				267F7C1329C758390069A2A5 /* Exercise.xcdatamodel */,
+			);
+			currentVersion = 267F7C1329C758390069A2A5 /* Exercise.xcdatamodel */;
+			path = Exercise.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 267F7BF429C743780069A2A5 /* Project object */;
 }
