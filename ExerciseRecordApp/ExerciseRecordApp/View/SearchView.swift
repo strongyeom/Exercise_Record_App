@@ -80,8 +80,9 @@ struct SearchView: View {
                         }
                     }
                 }
+                .padding()
             }
-            .padding()
+            
             .searchable(text: $searchText, prompt: "카테고리로 검색")
             .navigationBarTitle("운동일지")
             .navigationBarTitleDisplayMode(.inline)
