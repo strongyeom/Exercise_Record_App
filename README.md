@@ -29,7 +29,7 @@ iPhone 14 Pro, iPhone 14 에서 최적화됨
 
 2. 검색기능을 활용하여 루틴 검색 가능 
 - 언제 운동을 했는지 또한 어떤 루틴을 적용했는지 한눈에 볼 수 있어요
-
+<img src="https://user-images.githubusercontent.com/101084872/226649208-e48429f0-7586-47d5-accc-32c991fc5fa0.gif" width= 200>
 <br/>
 <br/>
 
