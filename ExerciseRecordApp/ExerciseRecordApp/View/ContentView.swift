@@ -18,6 +18,10 @@ struct ContentView: View {
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                 }
+            CalendarView()
+                .tabItem {
+                    Label("calendar", systemImage: "calendar")
+                }
         }
     }
 }
