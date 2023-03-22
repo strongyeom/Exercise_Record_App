@@ -65,6 +65,13 @@ struct SearchView: View {
                                                     
                                                 }
                                                 Spacer()
+                                                    
+                                                Button {
+                                                    updateIsSuccess(target: data)
+                                                } label: {
+                                                    Image(systemName : data.isSuccess ? "checkmark.square.fill" : "checkmark.square")
+                                                }
+
                                                 
                                                 HStack {
                                                     Rectangle()
@@ -75,6 +82,7 @@ struct SearchView: View {
                                             }
                                             .padding(.leading, 10)
                                         }
+                                        .opacity(data.isSuccess ? 0.3 : 1.0)
                                 }
                             }
                         }
@@ -89,9 +97,17 @@ struct SearchView: View {
 
         }
     }
+    
     func removeData(target: FetchedResults<Entity>.Element) {
         withAnimation {
             viewContext.delete(target)
+            try? viewContext.save()
+        }
+    }
+    
+    func updateIsSuccess(target: Entity) {
+        withAnimation {
+            target.isSuccess.toggle()
             try? viewContext.save()
         }
     }

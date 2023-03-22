@@ -71,6 +71,13 @@ struct MainView: View {
                                             
                                         }
                                         Spacer()
+                                            
+                                        Button {
+                                            updateIsSuccess(target: data)
+                                        } label: {
+                                            Image(systemName : data.isSuccess ? "checkmark.square.fill" : "checkmark.square")
+                                        }
+
                                         
                                         HStack {
                                             Rectangle()
@@ -81,6 +88,7 @@ struct MainView: View {
                                     }
                                     .padding(.leading, 10)
                                 }
+                                .opacity(data.isSuccess ? 0.3 : 1.0)
                         }
                     }
                 }
@@ -99,6 +107,13 @@ struct MainView: View {
                     
                 }
             }
+        }
+    }
+    
+    func updateIsSuccess(target: Entity) {
+        withAnimation {
+            target.isSuccess.toggle()
+            try? viewContext.save()
         }
     }
 }

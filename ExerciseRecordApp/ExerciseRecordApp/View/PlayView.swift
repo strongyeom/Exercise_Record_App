@@ -25,18 +25,18 @@ struct PlayView: View {
                     .font(.title)
                     .padding(-3)
                 Spacer()
-                    Menu {
-                        Button {
-                            showingAlert.toggle()
-                        } label: {
-                            Text("삭제하기")
-                                .font(.title3)
-                        }
-
+                Menu {
+                    Button {
+                        showingAlert.toggle()
                     } label: {
-                        Image(systemName: "ellipsis")
-                            .font(.title)
+                        Text("삭제하기")
+                            .font(.title3)
                     }
+                    
+                } label: {
+                    Image(systemName: "ellipsis")
+                        .font(.title)
+                }
             }
             .padding(.bottom, 4)
             .alert("삭제하시겠습니까?", isPresented: $showingAlert) {
@@ -54,17 +54,17 @@ struct PlayView: View {
                 .background(Color(red: 237/255, green: 237/255, blue: 237/255))
                 .cornerRadius(8)
                 .padding(.bottom, 10)
-
+            
             CircleTimerView()
                 .padding(.bottom, 20)
             
             HStack {
                 Spacer()
                 Button {
+                    updateIsSuccess(target: data)
                     dismiss()
-                    
                 } label: {
-                    Text("운동종료")
+                    Text("운동완료")
                         .font(.title)
                     
                 }
@@ -73,7 +73,7 @@ struct PlayView: View {
                 
                 Spacer()
             }
-        Spacer()
+            Spacer()
             
         }
         .padding()
@@ -85,11 +85,18 @@ struct PlayView: View {
             try? viewContext.save()
         }
     }
+    
+    func updateIsSuccess(target: Entity) {
+        withAnimation {
+            target.isSuccess.toggle()
+            try? viewContext.save()
+        }
+    }
 }
 
 struct PlayView_Previews: PreviewProvider {
     static var previews: some View {
         PlayView(data: Entity())
-
+        
     }
 }

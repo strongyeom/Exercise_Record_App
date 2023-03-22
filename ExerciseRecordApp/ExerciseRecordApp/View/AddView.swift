@@ -139,6 +139,7 @@ struct AddView: View {
             data.category = categoryString
             data.colorIndex = Int32(colorIndex)
             data.date = Date.now
+            data.isSuccess = false
             try? viewContext.save()
         }
     }
