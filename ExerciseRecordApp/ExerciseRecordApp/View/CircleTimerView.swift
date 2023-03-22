@@ -90,12 +90,12 @@ struct CircleTimerView: View {
     @State var counter: Int = 0
     @State var countTo: Int = 0
     
-    @State private var seconds1: Int = 30
-    @State private var seconds2: Int = 40
-    @State private var seconds3: Int = 60
+    @State private var seconds1: Int = 40
+    @State private var seconds2: Int = 60
+    @State private var seconds3: Int = 90
     @State private var selectedButton: Int? = nil
     
-    private var buttonArray: [String] = ["30초", "40초", "60초"]
+    private var buttonArray: [String] = ["40초", "60초", "90초"]
     
     
     private var timer = Timer
@@ -110,7 +110,7 @@ struct CircleTimerView: View {
                 Clock(counter: counter, countTo: countTo)
             }
             
-            VStack(spacing: 13) {
+            VStack(spacing: 16) {
                 ForEach(Array(zip(buttonArray.indices, buttonArray)), id:\.0) { index, button in
                     Button {
                         countTo = [seconds1, seconds2, seconds3][index]
@@ -155,10 +155,10 @@ struct ButtonStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .font(.title3)
-            .foregroundColor(.white)
+            .foregroundColor(isSelected ? .white : .black)
             .padding(EdgeInsets(top: 5, leading: 8, bottom: 5, trailing: 8))
-            .background(isSelected ? .orange : .blue)
-            .cornerRadius(12)
+            .background(isSelected ? .orange : .gray)
+            .cornerRadius(9)
     }
 }
 

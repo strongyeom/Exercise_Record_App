@@ -19,7 +19,7 @@ struct PlayView: View {
     var body: some View {
         
         
-        VStack(alignment: .leading, spacing: 6) {
+        VStack(alignment: .leading, spacing: 8) {
             HStack {
                 Text(data.title ?? "")
                     .font(.title)
@@ -53,7 +53,7 @@ struct PlayView: View {
                 .frame(maxWidth: .infinity, maxHeight: UIScreen.main.bounds.height * 0.3, alignment: .topLeading)
                 .background(Color(red: 237/255, green: 237/255, blue: 237/255))
                 .cornerRadius(8)
-                .padding(.bottom, 10)
+                .padding(.bottom, 15)
             
             CircleTimerView()
                 .padding(.bottom, 20)
