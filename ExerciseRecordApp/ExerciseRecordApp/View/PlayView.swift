@@ -21,6 +21,12 @@ struct PlayView: View {
         
         
         VStack(alignment: .leading, spacing: 8) {
+            Button {
+                dismiss()
+            } label: {
+                Text("뒤로 가기")
+            }
+
             HStack {
                 Text(data.title ?? "")
                     .font(.title)

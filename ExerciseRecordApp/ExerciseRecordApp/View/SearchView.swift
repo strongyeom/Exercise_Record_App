@@ -15,7 +15,8 @@ struct SearchView: View {
     @State private var searchText: String = ""
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Entity.date, ascending: false)]) private var datas: FetchedResults<Entity>
-    
+    @State private var isFullCoverSheet: Bool = false
+
     var body: some View {
         
         
@@ -26,9 +27,6 @@ struct SearchView: View {
                         
                         if let category = data.category {
                             if category == searchText {
-                                NavigationLink {
-                                    PlayView(data: data)
-                                } label: {
                                     RoundedRectangle(cornerRadius: 12)
                                         .stroke(mainCategoies[Int(data.colorIndex)], lineWidth: 1)
                                         .frame(height: 80)
@@ -65,7 +63,9 @@ struct SearchView: View {
                                                     
                                                 }
                                                 Spacer()
-                                                    
+                                                Rectangle()
+                                                    .fill(.white)
+                                                    .opacity(0.001)
                                                 Button {
                                                     updateIsSuccess(target: data)
                                                 } label: {
@@ -83,9 +83,14 @@ struct SearchView: View {
                                             .padding(.leading, 10)
                                         }
                                         .opacity(data.isSuccess ? 0.3 : 1.0)
-                                }
+                                        .fullScreenCover(isPresented: $isFullCoverSheet) {
+                                            PlayView(data: data)
+                                        }
                             }
                         }
+                    }
+                    .onTapGesture {
+                        isFullCoverSheet.toggle()
                     }
                 }
                 .padding()
