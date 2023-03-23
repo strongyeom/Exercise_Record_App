@@ -7,6 +7,9 @@
 import SwiftUI
 
 
+
+// Todo - 서치 뷰에 focusState 설정하기
+
 struct MainView: View {
     
     private var mainCategoies: [Color] = [.red, .yellow, .mint, .gray, .green]
