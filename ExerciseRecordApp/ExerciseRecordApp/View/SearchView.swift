@@ -98,7 +98,7 @@ struct SearchView: View {
         }
     }
     
-    func removeData(target: FetchedResults<Entity>.Element) {
+    func removeData(target: Entity) {
         withAnimation {
             viewContext.delete(target)
             try? viewContext.save()
