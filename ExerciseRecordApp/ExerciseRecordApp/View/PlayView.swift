@@ -12,6 +12,7 @@ struct PlayView: View {
     var data: Entity
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) var dismiss
+    
     @State private var showingAlert: Bool = false
     
     let fontSize: CGFloat = 30
@@ -60,11 +61,14 @@ struct PlayView: View {
             
             HStack {
                 Spacer()
+                
+                
                 Button {
-                    updateIsSuccess(target: data)
+                    updateIsToggle(target: data)
                     dismiss()
+                    
                 } label: {
-                    Text("운동완료")
+                    Text(data.isSuccess ? "운동재시작" : "운동완료")
                         .font(.title)
                     
                 }
@@ -86,9 +90,10 @@ struct PlayView: View {
         }
     }
     
-    func updateIsSuccess(target: Entity) {
+    func updateIsToggle(target: Entity) {
         withAnimation {
             target.isSuccess.toggle()
+            target.exerciseClicked.toggle()
             try? viewContext.save()
         }
     }

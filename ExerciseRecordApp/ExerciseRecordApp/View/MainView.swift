@@ -73,7 +73,7 @@ struct MainView: View {
                                         Spacer()
                                             
                                         Button {
-                                            updateIsSuccess(target: data)
+                                            updateIsToggle(target: data)
                                         } label: {
                                             Image(systemName : data.isSuccess ? "checkmark.square.fill" : "checkmark.square")
                                         }
@@ -110,9 +110,10 @@ struct MainView: View {
         }
     }
     
-    func updateIsSuccess(target: Entity) {
+    func updateIsToggle(target: Entity) {
         withAnimation {
             target.isSuccess.toggle()
+            target.exerciseClicked.toggle()
             try? viewContext.save()
         }
     }

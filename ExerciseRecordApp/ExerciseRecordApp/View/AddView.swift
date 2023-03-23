@@ -140,6 +140,7 @@ struct AddView: View {
             data.colorIndex = Int32(colorIndex)
             data.date = Date.now
             data.isSuccess = false
+            data.exerciseClicked = false
             try? viewContext.save()
         }
     }
