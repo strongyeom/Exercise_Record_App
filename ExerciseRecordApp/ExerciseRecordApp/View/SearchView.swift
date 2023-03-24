@@ -15,8 +15,7 @@ struct SearchView: View {
     @State private var searchText: String = ""
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Entity.date, ascending: false)]) private var datas: FetchedResults<Entity>
-    @State private var isFullCoverSheet: Bool = false
-
+    @State private var isFullCoverSheet: Bool = false    
     var body: some View {
         
         

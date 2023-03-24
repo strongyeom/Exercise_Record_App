@@ -21,16 +21,13 @@ struct PlayView: View {
         
         
         VStack(alignment: .leading, spacing: 8) {
-            Button {
-                dismiss()
-            } label: {
-                Text("뒤로 가기")
-            }
-
             HStack {
-                Text(data.title ?? "")
-                    .font(.title)
-                    .padding(-3)
+                Button {
+                    dismiss()
+                } label: {
+                    Text("뒤로 가기")
+                }
+                
                 Spacer()
                 Menu {
                     Button {
@@ -45,13 +42,12 @@ struct PlayView: View {
                         .font(.title)
                 }
             }
-            .padding(.bottom, 4)
-            .alert("삭제하시겠습니까?", isPresented: $showingAlert) {
-                Button("확인", role: .destructive) {
-                    dismiss()
-                    removeData(target: data)
-                }
-            }
+           
+
+                Text(data.title ?? "")
+                    .font(.title)
+                    .padding(-3)
+
             
             Text(data.content ?? "")
                 .font(.title2)
@@ -85,6 +81,12 @@ struct PlayView: View {
             }
             Spacer()
             
+        }
+        .alert("삭제하시겠습니까?", isPresented: $showingAlert) {
+            Button("확인", role: .destructive) {
+                dismiss()
+                removeData(target: data)
+            }
         }
         .padding()
     }
