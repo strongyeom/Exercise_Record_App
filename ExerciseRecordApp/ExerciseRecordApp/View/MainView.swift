@@ -18,22 +18,30 @@ struct MainView: View {
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Entity.date, ascending: false)]) private var datas: FetchedResults<Entity>
     @State private var isFullCoverSheet: Bool = false
+    @State private var searchQuery: String = ""
     
+    
+    var filter : FetchedResults<Entity> {
+       
+        return searchQuery.isEmpty ? datas : filterSearchQuery()
+    }
+    
+    func filterSearchQuery() -> FetchedResults<Entity> {
+        let filter = searchQuery
+        let predicate = NSPredicate(format: "title = %@", filter)
+        datas.nsPredicate = predicate
+        print("datas - \(datas.count)")
+        return datas
+    }
+   
     var body: some View {
         
         
         NavigationView {
             ScrollView(showsIndicators: false) {
                 
-                if datas.isEmpty {
-                   Spacer()
-                        Text("+ 버튼을 눌러 운동 일지를 추가해주세요")
-                            .font(.title3)
-                            .multilineTextAlignment(.center)
-                }
-                
                 LazyVStack(spacing: 15) {
-                    ForEach(datas) { data in
+                    ForEach(datas, id: \.self) { data in
                         ZStack {
                             RoundedRectangle(cornerRadius: 12)
                                 
@@ -116,6 +124,23 @@ struct MainView: View {
                     
                 }
             }
+            .searchable(text: $searchQuery, placement: .navigationBarDrawer, prompt: "검색어를 입력해주세요.")
+            .onSubmit(of: .search) {
+                print("\(searchQuery)")
+            }
+            .onChange(of: searchQuery) { newValue in
+                search(text: newValue)
+            }
+        }
+    }
+    
+    private func search(text: String) {
+        if text.isEmpty {
+            datas.nsPredicate = nil
+        } else {
+            let titlePredicate: NSPredicate = NSPredicate(format: "title contains %@", text)
+            let contentPredicate: NSPredicate = NSPredicate(format: "content contains %@", text)
+            datas.nsPredicate = NSCompoundPredicate(orPredicateWithSubpredicates: [titlePredicate, contentPredicate])
         }
     }
     
